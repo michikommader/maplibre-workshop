@@ -1,6 +1,3 @@
-<img width="25%" alt="image" src="https://github.com/user-attachments/assets/ca5384c8-118a-4f46-8090-80c917f525c9" />
-<br>
-
 # Make your own basemap with MapLibre and Planetiler
 
 Welcome to our workshop organized by [MapLibre](https://maplibre.org/)! We hope you will have fun and learn something useful.
@@ -84,14 +81,15 @@ Look at the Web UI, especially the catalog.
 ## 3. Styling your map
 
 * Go to [Maputnik](https://maplibre.org/maputnik)
-* click open and open the `OSM OpenMapTiles` style
+* click open and open the `OSM Liberty` style
+* Use the search box in the top bar to find the workshop location and move the map there first, so the map is already looking at the area your tiles cover. This makes the next step obvious: the moment you swap in your own source, you will see the map change in place.
 * Use the data source editor to **modify** the existing active source `#openmaptiles`. Use the URL of your Martin instance with the `/workshop` TileJSON endpoint from the previous step.  You can get this link by clicking the `inspect` button in the data source editor, and click `Copy link` next to the `TileJSON URL`. It should look something like `https://{public URL for your Martin instance}/workshop`.
 
 ![edit datasource](assets/datasource.png)
 
 * Click the `x` button next to the `Sources` to close the data source editor.
 
-* Note that we only have detailed tiles for a small area due to the OSM extract that we used. Try to zoom out, and re-zoom in on the workshop's location to see details. To generate vector tiles for the entire world would require a somewhat more powerful server than the one that GitHub Codespaces offers.
+* Note that we only have detailed tiles for a small area due to the OSM extract that we used. Because you already moved the map to the workshop location, your data should appear right away; if you pan or zoom far outside that area the map will look empty. To generate vector tiles for the entire world would require a somewhat more powerful server than the one that GitHub Codespaces offers.
 
 * You can switch from the 'Map' view to the 'Inspect' view to see the data contained in your tiles. If it looks something like this, you are doing great so far!
 
@@ -108,7 +106,7 @@ When you are happy with the style you are created, go to *Save* in the top bar a
 Create an index.html in your Codespace and paste the contents of the HTML file that was downloaded. Next, launch a simple web server and expose it to the internet like before.
 
 ```
-python -m http.server 1234
+python3 -m http.server 1234
 ```
 
 If everything went well, you will have created your own basemap and deployed it in under one hour!
